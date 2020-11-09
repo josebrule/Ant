@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Page Content -->
+<div class="container" style="stroke: none; background: #FBEFD7;">
+    <div class="row">
+        <div class="col-lg-3">
+            <h1 class="my-4">Anchetas</h1>
+            <div class="list-group">
+                <a href="/tortas" class="list-group-item">Tortas</a>
+                <a href="/Anchetas" class="list-group-item active">Anchetas</a>
+                <a href="/BebidasMermeladas" class="list-group-item">Bebidas & Mermeladas</a>
+                <a href="/Galletas" class="list-group-item ">Galletas</a>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-9">
+            {% include 'includes/_flashmsg.html' %}
+
+            <div class="row">
+                {% for product in Anchetas %}
+                <div class="">
+                    <div class="card h-400">
+                        <a href="/Anchetas?view={{product.id}}">
+                            <div class="card-img-top"
+                                 style="background: url('static/image/product/{{product.category}}/{{product.picture}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:400px "></div>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/Anchetas?view={{product.id}}">{{ product.pName}}</a>
+                            </h5>
+                            <h4>${{product.price}}</h4>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"></small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+{% endblock %}

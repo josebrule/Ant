@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Page Content -->
+<div class="container" style="stroke: none; background: #FBEFD7;">
+    <div class="row">
+        <div class="col-lg-3 my-4">
+            <div class="list-group">
+                <a href="/tortas" class="list-group-item">Tortas</a>
+                <a href="/Anchetas" class="list-group-item">Anchetas</a>
+                <a href="/BebidasMermeladas" class="list-group-item">BebidasMermeladas</a>
+                <a href="/Galletas" class="list-group-item">Galletas</a>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-9">
+            <div class="row">
+                {% for product in tortass %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Detalles del producto
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{ product.pName}}</h3>
+                            <h4 style="text-align:center">${{ product.price}}</h4>
+                            <p class="card-text" style="font-size:small">{{ product.description}}</p>
+                            <a href="/{{product.category}}?order={{product.id}}" class="btn btn-success">Agregar al carro</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>
+            {% if x == '' %}
+            <h2 class="mb-4">No se encontraron Productos Similares</h2>
+            {% else%}
+            <h2 class="mb-4">Productos Similares para ti:</h2>
+            <div class="row">
+                {% for product in x[0] %}
+                <div class="">
+                    <div class="card mb-4">
+                        <a href="/{{product.category}}?view={{product.id}}">
+                            <div class="card-img-top id_{{product.id}}"
+                                 style="background: url('static/image/product/{{product.category}}/{{product.picture}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:400px "></div>
+                        </a>
+                        <div class="card-body">
+                            <h5><a class="card-title" href="/{{product.category}}?view={{product.id}}">{{ product.pName}}</a></h5>
+                            <h4>${{product.price}}</h4>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <!-- /.col-lg-9 -->
+
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+{% endblock %}

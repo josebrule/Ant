@@ -1,0 +1,64 @@
+<section id="navbar">
+<nav class="navbar navbar-expand-lg  fixed-top ">
+<div class="contenido">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
+
+    <a class="navbar-brand w-10 h-10" href="{{ url_for('homeW') }}"><img src="{{ url_for('static', filename='image/icono1.png') }}" type="image/x-icon"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" src="/static/image/image1.jpg" alt="">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+     <div>
+
+            <a style="font-size:medium;" class="navbar-brand" href="{{ url_for('about') }}">Acerca de</a>
+            <a style="font-size:medium;" class="navbar-brand" href="{{ url_for('productos') }}">Productos</a>
+            <a style="font-size:medium;" class="navbar-brand" href="{{ url_for('contacto') }}">Contacto</a>
+        </div>
+
+
+
+
+    <div class="collapse navbar-collapse" id="navbarResponsive" >
+
+
+        <div class="input-group p-0 justify-content-center">
+            <form action="/search" method="get" class="w-100 m-0" style="padding-right: 20%;">
+                <div class="input-group-append rounded-left">
+                    <input type="text" class="form-control rounded-left form-control-sm" autocomplete="off" style="float: left; border-radius: 0;" name="q" placeholder=" Que producto deseas...">
+                    <button class="btn btn-success btn-sm rounded-right" style="border-radius: 0;" type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
+        	<div id="kart">
+		<a class="navbar-brand w-50 h-50" href="/cart">
+			<img src={{url_for('static', filename='image/shoppingCart.png')}} id="image/x-icon" /></a>
+	    </div>
+
+        <ul class="navbar-nav ml-auto">
+            {% if session.logged_in %}
+
+            <li class="nav-item"><a href="/profile?user={{session.uid}}" class="nav-link"><span class=""></span>Perfil</a>
+            </li>
+            <li class="nav-item"><a href="/out" class="nav-link"><span class=""></span> Salir</a></li>
+            {% else %}
+
+            <li class="nav-item"><a href="/register" class="nav-link"><span class=""></span> Registrarse</a></li>
+            <li class="nav-item"><a href="/login" class="nav-link"><span class=""></span> Ingresar</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+
+
+
+
+
+</div>
+</nav>
+
+</section >
+ <div class="espacio1"></div>

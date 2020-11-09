@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+   <div class="container" style="background: #FBEFD7;">
+
+      <div class="" style="background: #FBEFD7;">
+                <img class="imagen" src="/static/image/comienzos.jpg">
+            </div>
+
+      </div>
+    <div class="espacio" style="stroke: none; background: #FBEFD7;"></div>
+
+
+    <section class="left-col" id="portfolio" style="stroke: none; background: #FBEFD7;">
+      <p style="font-size:2vw;">"Antojos Saludables" nace inspirado por nuestro gusto por preparar comidas deliciosas para compartir en familia y del querer ayudar a las personas. Tenemos familiares que se han dedicado a la medicina y nos comentaban que en muchas ocasiones es difícil que las personas con obesidad o diabetes puedan conseguir alimentos saludables, ricos y económicos que les ayudaran en su proceso , y sobre todo a calmar sus antojos sin generarles problemas de salud. Es por esto que, con la guía medica de nuestros familiares, comenzamos a ensayar diferentes recetas saludables con productos 100% naturales, sin azúcar, sin gluten, e incluso opciones veganas, las cuales comenzamos a compartir con nuestros vecinos y conocidos. Al tener una gran acogida, decidimos hacer de esta idea una empresa familiar para que nuestros productos puedan ser disfrutados por más personas.</p>
+    </section>
+    <section class="sidebar">
+      <img src="static/image/image1.png">
+    </section>
+
+
+  <div id="wrapper">
+      <section class="clientes contenedor">
+           <img src="/static/image/image1.jpg" alt="">
+    </section>
+
+
+
+        <section class="slider">
+          <ul class="slider1">
+            <li><img src="static/image/slider/slider1.jpg" alt=""></li>
+            <li><img src="static/image/slider/slider2.jpg" alt=""></li>
+            <li><img src="static/image/slider/slider3.jpg" alt=""></li>
+          </ul>
+        </section>
+
+
+
+    <!-- ICONS -->
+
+
+
+    <div class="clearfix-padding"></div>
+    <!-- INFO THUMBNAILS -->
+    <div class="one-third-padding" id="services">
+      <h3 style="font-size:3vw;">El principal Ingrediente</h3>
+      <img src="static/image/image2.jpg" alt="">
+      <p style="font-size:2vw;">La mayoría de nuestros Antojos Saludables están hechos a base de Avena, un cereal que contiene gran cantidad de nutrientes, vitaminas, minerales y fibra, que ayudan a mejorar la función digestiva e intestinal, a disminuir resistencia a la insulina, los niveles de colesterol, la sensación de ansiedad y hambre, entre otros beneficios.</p>
+
+    </div>
+    <div class="one-third-padding">
+      <h3 style="font-size:3vw;">Recetas Saludables</h3>
+      <img src="static/image/image3.jpeg" alt="">
+      <p style="font-size:2vw;">Nuestros productos son perfectos para personas con diabetes o enfermedades digestivas, personas que quieren controlar su peso, o simplemente que quieren comer algo delicioso y cuidar su salud. Productos hechos con conciencia y mucho amor!</p>
+    </div>
+    <div class="one-third-padding">
+      <h3 style="font-size:3vw;">Nuestros Productos</h3>
+      <img src="static/image/image3.png" alt="">
+      <p style="font-size:2vw;">Cada uno de nuestros productos los hacemos al gusto de nuestros clientes, con mucha dedicación y cariño.No importa si tienes Diabetes, Mellitus, Hipoglicemia, estás intentando controlar o mantener tu peso, eres vegano, o simplemente quieres comer algo delicioso mientras cuidas tu salud... Para todos tenemos una deliciosa opción!</p>
+    </div>
+  </div>
+  <div class="clearfix-padding"></div>
+
+
+
+
+
+
+  <script>
+    $(document).ready(function(){
+      $('.slider1').bxSlider({
+        mode: 'fade',
+      });
+      $('.slider2').bxSlider({
+        mode: 'fade',
+      });
+      $('.slider3').bxSlider({
+        mode: 'fade',
+      });
+    });
+  </script>
+{% endblock %}

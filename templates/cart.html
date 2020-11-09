@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container" style="stroke: none; background: #FBEFD7; margin-right: 60px;">
+{% include 'includes/_flashmsg.html' %}
+
+<div style="align-items:left">
+
+	<h2>Carro de compras</h2>
+	<div id="tableItems">
+		{% for product in products %}
+		<div class="card2">
+			<hr id="seperator"></hr>
+			<div id="itemImage">
+				<img src="{{url_for('static', filename='image/product/'+product[4]+'/'+product[3])}}" id="image"/>
+			</div>
+
+			<div id="itemName">
+				<span id="itemNameTag">{{product[1]}}</span>
+			</div>
+
+
+			<div id="itemPrice">
+				${{product[2]}}
+			</div>
+
+			<div id="itemRemover">
+				<a href="/removeFromCart?productId={{product[0]}}">Remover</a>
+			</div>
+
+
+		</div>
+
+
+		{% endfor %}
+
+
+		<div id="total">
+			<span id="subtotal">Subtotal</span> : ${{totalPrice}}
+		</div>
+	</div>
+</div>
+	<div class="row">
+		<div class="card3">
+	<div class="col-lg-3">
+
+	<form method="POST" onsubmit="return validateForm()" action="/cart">
+
+    <p style="font-size:25px" >Email: <input type="email" name="email"></p>
+    <p style="font-size:25px">Nombre: <input type="text" name="firstName"></p>
+    <p style="font-size:25px">Apellido: <input type="text" name="lastName"></p>
+    <p style="font-size:22px">Dirección1: <input type="text" name="address1"></p>
+    <p style="font-size:22px">Dirección2: <input type="text" name="address2"></p>
+    <p style="font-size:25px">Ciudad: <input type="text" name="city"></p>
+    <p style="font-size:22px">#Telefono: <input type="text" name="phone"></p>
+    <p><input type="submit" value="Confirmar compra"></p>
+
+	</form>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}
